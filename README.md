@@ -1,4 +1,4 @@
-# Mage2 Module Gaggle PaypalApi
+# Magento 2 Rest PaypalApi Module
 
     ``Gaggle/module-paypalapi``
 
