@@ -10,10 +10,10 @@
 
 
 ## Main Functionalities
-Gaggle_GiftcardApi
+Place Order by rest API
 
 ## Installation
- = in production please use the `--keep-generated` option
+ - in production please use the `--keep-generated` option
 
 ### Type 1: Zip file
 
@@ -97,7 +97,7 @@ By default we need to follow the few setups for placing the order
 
 - You wil get the response like this : 
 
-[
+``[
    {
        "code": 200,
        "token": "EC-4MD50688YD296870K",
@@ -106,7 +106,7 @@ By default we need to follow the few setups for placing the order
      	    "edit": "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&useraction=continue&token=EC-4MD50688YD296870K"
   	}
   }
-]
+]``
 -------------------------------------------------------------------------------------------------------------------------------------------------
 - Explanation – you need to redirect the customer to the {start url } and  after make the payment, paypal will redirect the user with two params in the redirect url "payer_id" and "token" Both value you need to call in the below api 
 
