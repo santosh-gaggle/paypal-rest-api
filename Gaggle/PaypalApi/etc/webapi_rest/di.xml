@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Gaggle\PaypalApi\Api\CreatePaypalExpressTokenManagementInterface" type="Gaggle\PaypalApi\Model\CreatePaypalExpressTokenManagement"/>
+	<preference for="Gaggle\PaypalApi\Api\SetPaymentMethodOnCartManagementInterface" type="Gaggle\PaypalApi\Model\SetPaymentMethodOnCartManagement"/>
+	<preference for="Gaggle\PaypalApi\Api\PlaceOrderManagementInterface" type="Gaggle\PaypalApi\Model\PlaceOrderManagement"/>
+
+
+    <type name="Gaggle\PaypalApi\Model\SetPaymentMethodOnCartManagement">
+        <arguments>
+            <argument name="allowedPaymentMethodCodes" xsi:type="array">
+                <item name="paypal_express" xsi:type="const">\Magento\Paypal\Model\Config::METHOD_WPP_EXPRESS</item>
+                <item name="payflow_express" xsi:type="const">\Magento\Paypal\Model\Config::METHOD_WPP_PE_EXPRESS</item>
+            </argument>
+        </arguments>
+    </type>
+    
+	<type name="Magento\PaypalGraphQl\Model\Provider\Checkout">
+        <arguments>
+            <argument name="checkoutTypes" xsi:type="array">
+                <item name="paypal_express" xsi:type="string">\Magento\Paypal\Model\Express\Checkout</item>
+                <item name="payflow_express" xsi:type="string">\Magento\Paypal\Model\PayflowExpress\Checkout</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\PaypalGraphQl\Model\Provider\Config">
+        <arguments>
+            <argument name="configTypes" xsi:type="array">
+                <item name="paypal_express" xsi:type="string">\Magento\Paypal\Model\Config</item>
+                <item name="payflow_express" xsi:type="string">\Magento\Paypal\Model\Config</item>
+            </argument>
+        </arguments>
+    </type>
+    
+</config>
