@@ -13,13 +13,13 @@
 Gaggle_GiftcardApi
 
 ## Installation
-\* = in production please use the `--keep-generated` option
+ = in production please use the `--keep-generated` option
 
 ### Type 1: Zip file
 
  - Unzip the zip file in `app/code/Gaggle`
  - Enable the module by running `php bin/magento module:enable Gaggle_PaypalApi`
- - Apply database updates by running `php bin/magento setup:upgrade`\*
+ - Apply database updates by running `php bin/magento setup:upgrade`
  - Flush the cache by running `php bin/magento cache:flush`
 
 ## Specifications
@@ -97,16 +97,16 @@ By default we need to follow the few setups for placing the order
 
 - You wil get the response like this : 
 
-[
+/*[
    {
        "code": 200,
        "token": "EC-4MD50688YD296870K",
        "paypal_urls": {
             "start": "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-4MD50688YD296870K&useraction=commit",
-      "edit": "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&useraction=continue&token=EC-4MD50688YD296870K"
-   }
+     	    "edit": "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&useraction=continue&token=EC-4MD50688YD296870K"
+  	}
   }
-]
+]*/
 -------------------------------------------------------------------------------------------------------------------------------------------------
 - Explanation – you need to redirect the customer to the {start url } and  after make the payment, paypal will redirect the user with two params in the redirect url "payer_id" and "token" Both value you need to call in the below api 
 
